@@ -1,9 +1,28 @@
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+end
+
 local hopHubIds = {100117331123089, 79091703265657, 85211729168715, 97598239454123}
+local scriptUrl = ""
 
 if table.find(hopHubIds, game.PlaceId) or table.find(hopHubIds, game.GameId) then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/BinWibuHubv1/NgThanhTam/refs/heads/main/HopHub.lua.txt"))()
+    scriptUrl = "https://raw.githubusercontent.com/BinWibuHubv1/NgThanhTam/refs/heads/main/HopHub.lua.txt"
 elseif game.PlaceId == 79268393072444 or game.GameId == 79268393072444 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/BinWibuHubv1/NgThanhTam/refs/heads/main/SellLemon.lua.txt"))()
+    scriptUrl = "https://raw.githubusercontent.com/BinWibuHubv1/NgThanhTam/refs/heads/main/SellLemon.lua.txt"
 elseif game.PlaceId == 16447934574 or game.GameId == 16447934574 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/BinWibuHubv1/NgThanhTam/refs/heads/main/TouchFootball.lua.txt"))()
+    scriptUrl = "https://raw.githubusercontent.com/BinWibuHubv1/NgThanhTam/refs/heads/main/TouchFootball.lua.txt"
+else
+    scriptUrl = "https://raw.githubusercontent.com/BinWibuHubv1/NgThanhTam/refs/heads/main/tawxm.lua"
+end
+
+if scriptUrl ~= "" then
+    task.spawn(function()
+        local success, content = pcall(game.HttpGet, game, scriptUrl)
+        if success and content then
+            local func = loadstring(content)
+            if func then
+                func()
+            end
+        end
+    end)
 end
