@@ -2,17 +2,17 @@ if not game:IsLoaded() then
     game.Loaded:Wait()
 end
 
-local hopHubIds = {100117331123089, 79091703265657, 85211729168715, 97598239454123}
+local bloxFruitsIds = {100117331123089, 79091703265657, 85211729168715}
 local scriptUrl = ""
 
-if table.find(hopHubIds, game.PlaceId) or table.find(hopHubIds, game.GameId) then
-    scriptUrl = "https://raw.githubusercontent.com/BinWibuHubv1/NgThanhTam/refs/heads/main/HopHub.lua.txt"
+if table.find(bloxFruitsIds, game.PlaceId) or table.find(bloxFruitsIds, game.GameId) then
+    scriptUrl = "https://raw.githubusercontent.com/BinWibuHubv1/NgThanhTam/refs/heads/main/BloxFruits.lua"
 elseif game.PlaceId == 79268393072444 or game.GameId == 79268393072444 then
     scriptUrl = "https://raw.githubusercontent.com/BinWibuHubv1/NgThanhTam/refs/heads/main/SellLemon.lua.txt"
 elseif game.PlaceId == 16447934574 or game.GameId == 16447934574 then
     scriptUrl = "https://raw.githubusercontent.com/BinWibuHubv1/NgThanhTam/refs/heads/main/TouchFootball.lua.txt"
 else
-    scriptUrl = "https://raw.githubusercontent.com/BinWibuHubv1/NgThanhTam/refs/heads/main/tawxm.lua"
+    scriptUrl = "https://raw.githubusercontent.com/BinWibuHubv1/NgThanhTam/refs/heads/main/HopHub.lua.txt"
 end
 
 if scriptUrl ~= "" then
