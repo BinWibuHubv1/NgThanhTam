@@ -8,7 +8,7 @@ elseif toclipboard then
     toclipboard("https://discord.gg/HaHYKVqc7")
 end
 
-local bloxFruitsIds = {100117331123089, 79091703265657, 85211729168715}
+local bloxFruitsIds = {100117331123089, 2753915549, 85211729168715}
 local scriptUrl = ""
 
 if table.find(bloxFruitsIds, game.PlaceId) or table.find(bloxFruitsIds, game.GameId) then
